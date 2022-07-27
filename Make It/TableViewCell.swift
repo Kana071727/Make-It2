@@ -6,11 +6,12 @@
 //
 
 import UIKit
-import RealmSwift
+
 
 class TableViewCell: UITableViewCell {
     
-   let realm = try! Realm()
+  
+
     
     
     @IBOutlet var shadowLayer: UIView!
@@ -19,14 +20,10 @@ class TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        let data: Data? = read()
         
-        titleLabel.text = data?.name
     }
     
-    func read() -> Data? {
-        return realm.objects(Data.self).first
-    }
+   
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

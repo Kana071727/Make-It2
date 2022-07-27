@@ -6,15 +6,11 @@
 //
 
 import UIKit
-import RealmSwift
 
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let realm = try! Realm()
-    
     @IBOutlet var tableView: UITableView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -6,14 +6,14 @@
 //
 
 import UIKit
-import RealmSwift
+
 
 class AddViewController: UIViewController {
     
-    let realm = try! Realm()
+    
     
     @IBOutlet var nametextfield: UITextField!
-    @IBOutlet var alerttextfield: UITextField!
+    @IBOutlet private weak var alertButton: UIButton!
     @IBOutlet private weak var sampleButton: UIButton!
     private var selectedMenuType = MenuType.ios
     
@@ -25,24 +25,7 @@ class AddViewController: UIViewController {
     
     ///saveButton
     @IBAction func save () {
-        let name: String = nametextfield.text!
-        let due: String = duetextfield.text!
-        let data: Data? = read()
-        self.dismiss(animated: true, completion: nil)
-        if data != nil {
-            try! realm.write {
-                data!.name = name
-                data!.due = due
-            }
-        }else {
-                let newData = Data()
-                newData.name = name
-            newData.due = due
-                
-                try! realm.write {
-                    realm.add(newData)
-                }
-            }
+        
         }
     ///cancelButton
     @IBAction func cancel(){
@@ -52,7 +35,6 @@ class AddViewController: UIViewController {
         super.viewDidLoad()
         ///テキストフィールドに下線
         nametextfield.setUnderLine()
-        alerttextfield.setUnderLine()
         ///メニュー
         configureMenu()
         ///Datepicker
@@ -114,18 +96,39 @@ extension UITextField {
 
 }
 enum MenuType: CaseIterable {
-    case ios
-    case android
-    case web
+    case red
+    case pink
+    case blue
+    case orenge
+    case green
+    case purple
+    case grey
+    case black
+    case lightblue
+    case lightgreen
     
     var title: String{
         switch self {
-        case .ios:
+        case .red:
             return "ios"
-        case .android:
+        case .pink:
             return "android"
-        case .web:
+        case .blue:
             return "web"
+        case .orenge:
+            <#code#>
+        case .green:
+            <#code#>
+        case .purple:
+            <#code#>
+        case .grey:
+            <#code#>
+        case .black:
+            <#code#>
+        case .lightblue:
+            <#code#>
+        case .lightgreen:
+            <#code#>
         }
     }
 }
