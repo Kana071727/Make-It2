@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		541193662891525D00946A9E /* Data1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541193652891525D00946A9E /* Data1.swift */; };
+		5411936A289A7B0100946A9E /* Edit FileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54119369289A7B0100946A9E /* Edit FileViewController.swift */; };
 		54428C452850A5D200EAE052 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54428C442850A5D200EAE052 /* AppDelegate.swift */; };
 		54428C472850A5D200EAE052 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54428C462850A5D200EAE052 /* SceneDelegate.swift */; };
 		54428C492850A5D200EAE052 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54428C482850A5D200EAE052 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		541193652891525D00946A9E /* Data1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data1.swift; sourceTree = "<group>"; };
+		54119369289A7B0100946A9E /* Edit FileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Edit FileViewController.swift"; sourceTree = "<group>"; };
 		54428C412850A5D200EAE052 /* Make It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Make It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54428C442850A5D200EAE052 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54428C462850A5D200EAE052 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				541193652891525D00946A9E /* Data1.swift */,
 				54428C462850A5D200EAE052 /* SceneDelegate.swift */,
 				54428C482850A5D200EAE052 /* ViewController.swift */,
+				54119369289A7B0100946A9E /* Edit FileViewController.swift */,
 				54B2E417286C6B6600424FC6 /* AddViewController.swift */,
 				54428C742850A70100EAE052 /* TableViewCell.swift */,
 				548F8CF22875881E008AF84E /* Main.storyboard */,
@@ -278,6 +281,7 @@
 				54B2E418286C6B6600424FC6 /* AddViewController.swift in Sources */,
 				54428C492850A5D200EAE052 /* ViewController.swift in Sources */,
 				54428C762850A70100EAE052 /* TableViewCell.swift in Sources */,
+				5411936A289A7B0100946A9E /* Edit FileViewController.swift in Sources */,
 				541193662891525D00946A9E /* Data1.swift in Sources */,
 				54428C452850A5D200EAE052 /* AppDelegate.swift in Sources */,
 				54428C472850A5D200EAE052 /* SceneDelegate.swift in Sources */,

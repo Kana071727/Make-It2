@@ -15,11 +15,8 @@ class AddViewController: UIViewController {
     @IBOutlet var nametextfield: UITextField!
     @IBOutlet private weak var alertButton: UIButton!
     @IBOutlet private weak var sampleButton: UIButton!
-    private var selectedMenuType = MenuType.ios
+    private var selectedMenuType = MenuType.red
     
-    func read() -> Data? {
-        return realm.objects(Data.self).first
-    }
     @IBOutlet var duetextfield: UITextField!
     var datePicker = UIDatePicker()
     
@@ -51,8 +48,7 @@ class AddViewController: UIViewController {
         duetextfield.inputAccessoryView = toolbar
         
         // Do any additional setup after loading the view.
-        let data: Data? = read()
-        nametextfield.text = data?.name
+    
     }
     ///DatePicker
     @objc func done() {
@@ -99,7 +95,7 @@ enum MenuType: CaseIterable {
     case red
     case pink
     case blue
-    case orenge
+    case orange
     case green
     case purple
     case grey
@@ -115,20 +111,20 @@ enum MenuType: CaseIterable {
             return "android"
         case .blue:
             return "web"
-        case .orenge:
-            <#code#>
+        case .orange:
+            return "orange"
         case .green:
-            <#code#>
+            return "orange"
         case .purple:
-            <#code#>
+            return "orange"
         case .grey:
-            <#code#>
+            return "orange"
         case .black:
-            <#code#>
+            return "orange"
         case .lightblue:
-            <#code#>
+            return "orange"
         case .lightgreen:
-            <#code#>
+            return "orange"
         }
     }
 }
