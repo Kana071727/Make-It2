@@ -15,14 +15,14 @@ class AddViewController: UIViewController {
     @IBOutlet var nametextfield: UITextField!
     @IBOutlet private weak var alertButton: UIButton!
     @IBOutlet private weak var sampleButton: UIButton!
-    private var selectedMenuType = MenuType.red
+    private var selectedMenuType = MenuType.english
     
     @IBOutlet var duetextfield: UITextField!
     var datePicker = UIDatePicker()
     
     ///saveButton
     @IBAction func save () {
-        let Data = taskData(title: nametextfield.text ?? "")
+        let Data = taskData(title: nametextfield.text ?? "", subject: selectedMenuType.rawValue)
         if let encoded = try? JSONEncoder().encode(Data){
             UserDefaults.standard.set(encoded, forKey: "name")
         }
@@ -99,40 +99,70 @@ extension UITextField {
     }
 
 }
-enum MenuType: CaseIterable {
-    case red
-    case pink
-    case blue
-    case orange
-    case green
-    case purple
-    case grey
-    case black
-    case lightblue
-    case lightgreen
+
+enum MenuType:  String, CaseIterable {
+    case english
+    case japanese
+    case math
     
-    var title: String{
+    var title: String {
         switch self {
-        case .red:
-            return "ios"
-        case .pink:
-            return "android"
-        case .blue:
-            return "web"
-        case .orange:
-            return "orange"
-        case .green:
-            return "orange"
-        case .purple:
-            return "orange"
-        case .grey:
-            return "orange"
-        case .black:
-            return "orange"
-        case .lightblue:
-            return "orange"
-        case .lightgreen:
-            return "orange"
+        case .english:
+            return "English"
+        case .japanese:
+            return "Japanese"
+        case .math:
+            return "Math"
+        }
+    }
+    var Color: UIColor {
+        switch self {
+        case .english:
+            return .systemRed
+        case .japanese:
+            return .systemOrange
+        case .math:
+            return .systemBlue
         }
     }
 }
+
+//
+//enum MenuType: CaseIterable {
+//    case red
+//    case pink
+//    case blue
+//    case orange
+//    case green
+//    case purple
+//    case grey
+//    case black
+//    case lightblue
+//    case lightgreen
+//
+//    var title: String{
+//        switch self {
+//        case .red:
+//            return "ios"
+//        case .pink:
+//            return "android"
+//        case .blue:
+//            return "web"
+//        case .orange:
+//            return "orange"
+//        case .green:
+//            return "orange"
+//        case .purple:
+//            return "orange"
+//        case .grey:
+//            return "orange"
+//        case .black:
+//            return "orange"
+//        case .lightblue:
+//            return "orange"
+//        case .lightgreen:
+//            return "orange"
+//        }
+//    }
+//}
+//
