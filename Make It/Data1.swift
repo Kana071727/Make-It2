@@ -9,8 +9,7 @@ import Foundation
 
 struct taskData: Codable {
     var title: String
-    var kind: String
-    var due: String
-    var alert: String
+    ///var tag: String
+    ///var due: String
+    ///var alert: String
 }
-

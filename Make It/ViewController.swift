@@ -15,11 +15,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TodoCell")
+        //Codable
+                tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TodoCell")
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -27,8 +28,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.mainBackground.layer.cornerRadius = 8
         cell.mainBackground.layer.masksToBounds = true
         cell.backgroundColor = .systemGray6
+        //Codable
+        if let savedData = UserDefaults.standard.data(forKey: "name"), let decoded = try? JSONDecoder().decode(taskData.self, from: savedData){
+            cell.titleLabel.text = decoded.title
+        }
         return cell
-    
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100

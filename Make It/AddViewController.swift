@@ -22,14 +22,22 @@ class AddViewController: UIViewController {
     
     ///saveButton
     @IBAction func save () {
-        
+        let Data = taskData(title: nametextfield.text ?? "")
+        if let encoded = try? JSONEncoder().encode(Data){
+            UserDefaults.standard.set(encoded, forKey: "name")
         }
+        }
+    
     ///cancelButton
     @IBAction func cancel(){
         self.dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        ///Codable
+        if let savedData = UserDefaults.standard.data(forKey: "name"), let decoded = try? JSONDecoder().decode(taskData.self, from: savedData) {
+            nametextfield.text = decoded.title
+        }
         ///テキストフィールドに下線
         nametextfield.setUnderLine()
         ///メニュー
