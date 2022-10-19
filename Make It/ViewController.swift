@@ -18,8 +18,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //Codable
                 tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TodoCell")
     }
+    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         tableView.reloadData()
+        print("s")
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,7 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //Codable
         if let savedData = UserDefaults.standard.data(forKey: "name"), let decoded = try? JSONDecoder().decode(taskData.self, from: savedData){
             cell.titleLabel.text = decoded.title
-            cell.backgroundColor = Subject(rawValue: decoded.subject)?.Color
+            cell.shadowLayer.backgroundColor = Subject(rawValue: decoded.subject)?.Color
         }
         return cell
     }

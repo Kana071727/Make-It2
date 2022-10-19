@@ -14,6 +14,7 @@ class TableViewCell: UITableViewCell {
 
     
     
+   //cellの背景
     @IBOutlet var shadowLayer: UIView!
     @IBOutlet var mainBackground: UIView!
     @IBOutlet var titleLabel: UILabel!

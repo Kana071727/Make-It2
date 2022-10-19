@@ -26,6 +26,7 @@ class AddViewController: UIViewController {
         if let encoded = try? JSONEncoder().encode(Data){
             UserDefaults.standard.set(encoded, forKey: "name")
         }
+        self.dismiss(animated: true, completion: nil)
         }
     
     ///cancelButton
