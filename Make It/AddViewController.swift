@@ -26,6 +26,11 @@ class AddViewController: UIViewController {
         if let encoded = try? JSONEncoder().encode(Data){
             UserDefaults.standard.set(encoded, forKey: "name")
         }
+        let todo = TodoData(todoData: [taskData])
+        if let encoded = try? JSONEncoder().encode(todo){
+            .append(taskData)
+            UserDefaults.standard.set(encoded,forKey: "DATA")
+        }
         self.dismiss(animated: true, completion: nil)
         }
     
