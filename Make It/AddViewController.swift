@@ -20,16 +20,18 @@ class AddViewController: UIViewController {
     @IBOutlet var duetextfield: UITextField!
     var datePicker = UIDatePicker()
     
+    var titleArray:[String] = []
+    var subjectArray: [String] = []
+    let saveData = UserDefaults.standard
     ///saveButton
     @IBAction func save () {
-        let Data = taskData(title: nametextfield.text ?? "", subject: selectedMenuType.rawValue)
+        var titleArray = [nametextfield.text!]
+        var subjectArray = [selectedMenuType.rawValue]
+        
+        let Data = taskData(title: titleArray, subject:subjectArray)
+        
         if let encoded = try? JSONEncoder().encode(Data){
             UserDefaults.standard.set(encoded, forKey: "name")
-        }
-        let todo = TodoData(todoData: [taskData])
-        if let encoded = try? JSONEncoder().encode(todo){
-            .append(taskData)
-            UserDefaults.standard.set(encoded,forKey: "DATA")
         }
         self.dismiss(animated: true, completion: nil)
         }
@@ -42,7 +44,7 @@ class AddViewController: UIViewController {
         super.viewDidLoad()
         ///Codable
         if let savedData = UserDefaults.standard.data(forKey: "name"), let decoded = try? JSONDecoder().decode(taskData.self, from: savedData) {
-            nametextfield.text = decoded.title
+            
         }
         ///テキストフィールドに下線
         nametextfield.setUnderLine()

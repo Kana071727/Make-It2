@@ -11,23 +11,28 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
-    
+    ///taskArray
+    var taskArray: [Dictionary<String, String>] = []
+    let saveData = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //Codable
-                tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TodoCell")
+        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TodoCell")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
         print("s")
+    
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath)as! TableViewCell
@@ -37,6 +42,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //Codable
         if let savedData = UserDefaults.standard.data(forKey: "name"), let decoded = try? JSONDecoder().decode(taskData.self, from: savedData){
+            let nowIndexPathDictionary = taskArray[indexPath.row]
+            savedData.register(defau)
             cell.titleLabel.text = decoded.title
             cell.shadowLayer.backgroundColor = Subject(rawValue: decoded.subject)?.Color
         }

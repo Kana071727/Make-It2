@@ -8,9 +8,7 @@
 import Foundation
 
 struct taskData: Codable {
-    var title: String
-    var subject: String
+    var title: [String]
+    var subject: [String]
 }
-struct TodoData: Codable{
-    var todoData: [taskData]
-}
+
